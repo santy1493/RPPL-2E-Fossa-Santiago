@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class FormLogin : Form
+    public partial class FormMenu : Form
     {
-        public FormLogin()
+        public FormMenu()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            FormMenu formMenu = new FormMenu();
-            formMenu.Show();
         }
     }
 }
