@@ -24,3 +24,5 @@ C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\bin\Debug\net5
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CopyComplete
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormModificarEmpleado.resources
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.ModificarPersona.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormClientes.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormModificarCliente.resources

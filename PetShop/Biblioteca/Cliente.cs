@@ -27,5 +27,75 @@ namespace Biblioteca
 
         public int Id { get => id; set => id = value; }
         public double Saldo { get => saldo; set => saldo = value; }
+
+        public static bool CargarCliente(string nombre, string apellido, string cuil, string saldo)
+        {
+            if (ValidarDatosCliente(nombre, apellido, cuil, saldo))
+            {
+                Negocio.ListaClientes.Add(cuil, new Cliente(nombre, apellido, cuil, double.Parse(saldo)));
+
+                return true;
+            }
+
+            return false;
+
+        }
+
+        public static Cliente BuscarCliente(string cuil)
+        {
+            Cliente cliente;
+
+            if(Negocio.ListaClientes.TryGetValue(cuil, out cliente))
+            {
+                return cliente;
+            }
+
+            return null;
+        }
+
+        public bool ModificarCliente(string nombre, string apellido, string cuil, string saldo)
+        {
+            
+            if (ValidarDatosCliente(nombre, apellido, cuil, saldo))
+            {
+                string keyAntigua = this.Cuil;
+
+                this.Nombre = nombre;
+                this.Apellido = apellido;
+                this.Cuil = cuil;
+                this.Saldo = double.Parse(saldo);
+
+                Negocio.ListaClientes.Remove(keyAntigua);
+                Negocio.ListaClientes.Add(this.Cuil, this);
+                
+
+
+                return true;
+            }
+
+            return false;
+
+        }
+
+        private static bool ValidarDatosCliente(string nombre, string apellido, string cuil, string saldo)
+        {
+            if (Validaciones.ValidarNombreApellido(nombre, apellido) && Validaciones.ValidarCuil(cuil) && Validaciones.ValidarDecimal(saldo))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public bool BajaCliente()
+        {
+            if (!(this is null))
+            {
+                return Negocio.ListaClientes.Remove(this.Cuil);
+            }
+
+            return false;
+        }
     }
 }

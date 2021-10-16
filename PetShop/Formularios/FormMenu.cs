@@ -24,5 +24,12 @@ namespace Formularios
             formEmpleados.Show();
             this.Close();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            FormClientes formClientes = new FormClientes();
+            formClientes.Show();
+            this.Close();
+        }
     }
 }
