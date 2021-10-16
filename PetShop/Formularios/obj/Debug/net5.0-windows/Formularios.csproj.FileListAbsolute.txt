@@ -18,3 +18,9 @@ C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.Properties.Resources.resources
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormMenu.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormEmpleados.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\bin\Debug\net5.0-windows\Biblioteca.dll
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\bin\Debug\net5.0-windows\Biblioteca.pdb
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CopyComplete
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormModificarEmpleado.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.ModificarPersona.resources
