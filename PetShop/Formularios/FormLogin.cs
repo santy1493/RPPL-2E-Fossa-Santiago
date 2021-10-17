@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Biblioteca;
+using System;
 using System.Windows.Forms;
 
 namespace Formularios
@@ -19,8 +13,32 @@ namespace Formularios
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FormMenu formMenu = new FormMenu();
-            formMenu.Show();
+            Empleado empleado = Empleado.ValidarUserPass(this.txtUser.Text, this.txtPass.Text);
+
+            if (!(empleado is null))
+            {
+                Negocio.EmpleadoLogeado = empleado;
+                FormMenu form = new FormMenu();
+                form.Show();
+
+            }
+            else
+            {
+                this.txtUser.Text = "";
+                this.txtPass.Text = "";
+            }
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            this.txtUser.Text = "lucherrera";
+            this.txtPass.Text = "manzana";
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            this.txtUser.Text = "robmolina";
+            this.txtPass.Text = "banana";
         }
     }
 }

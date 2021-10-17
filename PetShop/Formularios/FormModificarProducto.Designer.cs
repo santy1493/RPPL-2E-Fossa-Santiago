@@ -43,6 +43,8 @@ namespace Formularios
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +123,7 @@ namespace Formularios
             // 
             // nupStock
             // 
-            this.nupStock.Location = new System.Drawing.Point(36, 414);
+            this.nupStock.Location = new System.Drawing.Point(154, 411);
             this.nupStock.Name = "nupStock";
             this.nupStock.Size = new System.Drawing.Size(71, 23);
             this.nupStock.TabIndex = 19;
@@ -129,7 +131,7 @@ namespace Formularios
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 396);
+            this.label6.Location = new System.Drawing.Point(154, 393);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 15);
             this.label6.TabIndex = 20;
@@ -167,11 +169,29 @@ namespace Formularios
             this.cmbTipo.Size = new System.Drawing.Size(189, 23);
             this.cmbTipo.TabIndex = 23;
             // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(36, 411);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 23);
+            this.txtPeso.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 393);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 15);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Peso";
+            // 
             // FormModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(268, 537);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label7);
@@ -203,6 +223,8 @@ namespace Formularios
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.btnGuardar, 0);
             this.Controls.SetChildIndex(this.cmbTipo, 0);
+            this.Controls.SetChildIndex(this.txtPeso, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
             ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,5 +247,7 @@ namespace Formularios
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Label label8;
     }
 }

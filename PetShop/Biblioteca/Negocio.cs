@@ -33,11 +33,11 @@ namespace Biblioteca
 
             ListaProductos = new List<Producto>()
                 {
-                    new Producto("dogui", "Purina", 101, 600, 15, ETipoProducto.Alimento),
-                    new Producto("hueso", "PetToy", 102, 230, 3, ETipoProducto.Juguete),
-                    new Producto("collar", "PetChain", 103, 300, 2, ETipoProducto.Correa),
-                    new Producto("shampoo", "PetShamp", 104, 250, 6, ETipoProducto.Limpieza),
-                    new Producto("pipeta", "Purina", 105, 400, 9, ETipoProducto.Medicamento),
+                    new Producto("dogui", "Purina", 101, 600, 4.5, 15, ETipoProducto.Alimento),
+                    new Producto("hueso", "PetToy", 102, 230, 0.4, 3, ETipoProducto.Juguete),
+                    new Producto("collar", "PetChain", 103, 300, 0.2, 2, ETipoProducto.Correa),
+                    new Producto("shampoo", "PetShamp", 104, 250, 0.8, 6, ETipoProducto.Limpieza),
+                    new Producto("pipeta", "Purina", 105, 400, 0.1, 9, ETipoProducto.Medicamento),
 
                 };
 

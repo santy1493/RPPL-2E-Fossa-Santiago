@@ -27,6 +27,7 @@ namespace Formularios
             txtMarca.Text = productoAModificar.Marca;
             txtCodigo.Text = productoAModificar.Codigo.ToString();
             txtPrecio.Text = productoAModificar.Precio.ToString();
+            txtPeso.Text = productoAModificar.Peso.ToString();
             nupStock.Text = productoAModificar.Stock.ToString();
         }
 
@@ -41,7 +42,8 @@ namespace Formularios
 
             if (ValidarSinVacios())
             {
-                if (productoAModificar.ModificarProducto(this.txtNombre.Text, this.txtMarca.Text, this.txtCodigo.Text, this.txtPrecio.Text, this.nupStock.Text, this.cmbTipo.Text))
+                if (productoAModificar.ModificarProducto(this.txtNombre.Text, this.txtMarca.Text, this.txtCodigo.Text,
+                    this.txtPrecio.Text, this.txtPeso.Text, this.nupStock.Text, this.cmbTipo.Text))
                 {
                     MessageBox.Show("DATOS GUARDADOS CON EXITO");
                 }
@@ -61,7 +63,7 @@ namespace Formularios
         private bool ValidarSinVacios()
         {
             if (!string.IsNullOrEmpty(this.txtNombre.Text) && !string.IsNullOrEmpty(this.txtMarca.Text) && !string.IsNullOrEmpty(this.txtCodigo.Text)
-                && !string.IsNullOrEmpty(this.txtPrecio.Text))
+                && !string.IsNullOrEmpty(this.txtPrecio.Text) && !string.IsNullOrEmpty(this.txtPeso.Text))
             {
                 return true;
             }

@@ -30,6 +30,8 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCSV = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,13 +49,13 @@ namespace Formularios
             this.apellidoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnCSV);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnBaja);
             this.panel3.Controls.Add(this.btnAlta);
@@ -73,6 +75,34 @@ namespace Formularios
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
+            // 
+            // btnCSV
+            // 
+            this.btnCSV.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCSV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCSV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCSV.Location = new System.Drawing.Point(714, 529);
+            this.btnCSV.Name = "btnCSV";
+            this.btnCSV.Size = new System.Drawing.Size(112, 31);
+            this.btnCSV.TabIndex = 14;
+            this.btnCSV.Text = "Exportar a .csv";
+            this.btnCSV.UseVisualStyleBackColor = false;
+            this.btnCSV.Click += new System.EventHandler(this.btnCSV_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(107, 529);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 31);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "MODIFICAR EMPLEADO";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBaja
             // 
@@ -184,6 +214,7 @@ namespace Formularios
             // 
             // dtgvEmpleados
             // 
+            this.dtgvEmpleados.AllowUserToAddRows = false;
             this.dtgvEmpleados.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dtgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -222,20 +253,6 @@ namespace Formularios
             this.usuario.Name = "usuario";
             this.usuario.Width = 175;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(107, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 31);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "MODIFICAR EMPLEADO";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -273,5 +290,6 @@ namespace Formularios
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCSV;
     }
 }

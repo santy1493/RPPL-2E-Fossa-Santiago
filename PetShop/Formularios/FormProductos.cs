@@ -42,7 +42,8 @@ namespace Formularios
                 dtgvProductos.Rows[n].Cells[2].Value = producto.Marca;
                 dtgvProductos.Rows[n].Cells[3].Value = producto.Tipo;
                 dtgvProductos.Rows[n].Cells[4].Value = producto.Precio;
-                dtgvProductos.Rows[n].Cells[5].Value = producto.Stock;
+                dtgvProductos.Rows[n].Cells[5].Value = producto.Peso;
+                dtgvProductos.Rows[n].Cells[6].Value = producto.Stock;
 
             }
 
@@ -51,7 +52,7 @@ namespace Formularios
         private bool ValidarSinVacios()
         {
             if (!string.IsNullOrEmpty(this.txtNombre.Text) && !string.IsNullOrEmpty(this.txtMarca.Text) && !string.IsNullOrEmpty(this.txtCodigo.Text)
-                && !string.IsNullOrEmpty(this.txtPrecio.Text) && !string.IsNullOrEmpty(this.txtStock.Text))
+                && !string.IsNullOrEmpty(this.txtPrecio.Text) && !string.IsNullOrEmpty(this.txtPeso.Text))
             {
                 return true;
             }
@@ -64,7 +65,8 @@ namespace Formularios
        
             if (ValidarSinVacios())
             {
-                if (Producto.CargarProducto(this.txtNombre.Text, this.txtMarca.Text, this.txtCodigo.Text, this.txtPrecio.Text, this.txtStock.Text, this.cmbTipo.Text))
+                if (Producto.CargarProducto(this.txtNombre.Text, this.txtMarca.Text, this.txtCodigo.Text,
+                    this.txtPrecio.Text, this.txtPeso.Text, this.txtStock.Text, this.cmbTipo.Text))
                 {
                     MessageBox.Show("ALTA DE PRODUCTO EXITOSA");
                 }
@@ -88,6 +90,7 @@ namespace Formularios
             txtMarca.Text = string.Empty;
             txtCodigo.Text = string.Empty;
             txtPrecio.Text = string.Empty;
+            txtPeso.Text = string.Empty;
             txtStock.Text = string.Empty;
         }
 
@@ -125,6 +128,11 @@ namespace Formularios
             form.ShowDialog();
             LlenarGrilla();
 
+        }
+
+        private void btnCSV_Click(object sender, EventArgs e)
+        {
+            ExportarCSV(dtgvProductos);
         }
     }
 }

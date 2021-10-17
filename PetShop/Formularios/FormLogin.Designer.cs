@@ -33,9 +33,11 @@ namespace Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnEmpleado = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,21 +86,21 @@ namespace Formularios
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Nombre de Usuario";
-            this.textBox1.Size = new System.Drawing.Size(180, 23);
-            this.textBox1.TabIndex = 1;
+            this.txtUser.Location = new System.Drawing.Point(73, 185);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PlaceholderText = "Nombre de Usuario";
+            this.txtUser.Size = new System.Drawing.Size(180, 23);
+            this.txtUser.TabIndex = 1;
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 267);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Contraseña";
-            this.textBox2.Size = new System.Drawing.Size(180, 23);
-            this.textBox2.TabIndex = 2;
+            this.txtPass.Location = new System.Drawing.Point(73, 267);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PlaceholderText = "Contraseña";
+            this.txtPass.Size = new System.Drawing.Size(180, 23);
+            this.txtPass.TabIndex = 2;
             // 
             // btnLogin
             // 
@@ -114,14 +116,40 @@ namespace Formularios
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnEmpleado
+            // 
+            this.btnEmpleado.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleado.Location = new System.Drawing.Point(26, 414);
+            this.btnEmpleado.Name = "btnEmpleado";
+            this.btnEmpleado.Size = new System.Drawing.Size(112, 23);
+            this.btnEmpleado.TabIndex = 4;
+            this.btnEmpleado.Text = "Empleado";
+            this.btnEmpleado.UseVisualStyleBackColor = false;
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Location = new System.Drawing.Point(190, 414);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(112, 23);
+            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 458);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.btnEmpleado);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.Name = "FormLogin";
@@ -138,11 +166,13 @@ namespace Formularios
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnEmpleado;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 

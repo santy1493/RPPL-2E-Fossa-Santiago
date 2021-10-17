@@ -30,7 +30,7 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnFacturacion = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@ namespace Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +51,8 @@ namespace Formularios
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblAdmin);
+            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnEmpleados);
             this.panel1.Controls.Add(this.btnFacturacion);
@@ -67,14 +69,14 @@ namespace Formularios
             this.panel1.Size = new System.Drawing.Size(244, 660);
             this.panel1.TabIndex = 0;
             // 
-            // label3
+            // lblUsuario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(120, 568);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "label3";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(120, 560);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(60, 15);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "lblUsuario";
             // 
             // pictureBox2
             // 
@@ -208,6 +210,17 @@ namespace Formularios
             this.panel2.Size = new System.Drawing.Size(924, 71);
             this.panel2.TabIndex = 1;
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Red;
+            this.lblAdmin.Location = new System.Drawing.Point(120, 636);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(48, 15);
+            this.lblAdmin.TabIndex = 12;
+            this.lblAdmin.Text = "ADMIN";
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -241,6 +254,7 @@ namespace Formularios
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblAdmin;
     }
 }

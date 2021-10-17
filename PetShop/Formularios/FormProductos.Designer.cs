@@ -30,6 +30,8 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -51,13 +53,18 @@ namespace Formularios
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCSV = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnCSV);
+            this.panel3.Controls.Add(this.txtPeso);
+            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cmbTipo);
             this.panel3.Controls.Add(this.btnModificar);
@@ -79,6 +86,22 @@ namespace Formularios
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(685, 40);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 23);
+            this.txtPeso.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(685, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 15);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Peso";
             // 
             // label9
             // 
@@ -131,7 +154,7 @@ namespace Formularios
             this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlta.Location = new System.Drawing.Point(723, 57);
+            this.btnAlta.Location = new System.Drawing.Point(712, 85);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(161, 31);
             this.btnAlta.TabIndex = 25;
@@ -221,6 +244,8 @@ namespace Formularios
             // 
             // dtgvProductos
             // 
+            this.dtgvProductos.AllowUserToAddRows = false;
+            this.dtgvProductos.AllowUserToDeleteRows = false;
             this.dtgvProductos.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dtgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -229,8 +254,9 @@ namespace Formularios
             this.marca,
             this.tipo,
             this.precio,
+            this.peso,
             this.stock});
-            this.dtgvProductos.Location = new System.Drawing.Point(28, 149);
+            this.dtgvProductos.Location = new System.Drawing.Point(21, 154);
             this.dtgvProductos.Name = "dtgvProductos";
             this.dtgvProductos.RowTemplate.Height = 25;
             this.dtgvProductos.Size = new System.Drawing.Size(870, 369);
@@ -241,36 +267,57 @@ namespace Formularios
             // 
             this.codigo.HeaderText = "Codigo";
             this.codigo.Name = "codigo";
-            this.codigo.Width = 75;
+            this.codigo.Width = 70;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
-            this.nombre.Width = 220;
+            this.nombre.Width = 190;
             // 
             // marca
             // 
             this.marca.HeaderText = "Marca";
             this.marca.Name = "marca";
-            this.marca.Width = 195;
+            this.marca.Width = 190;
             // 
             // tipo
             // 
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
-            this.tipo.Width = 157;
+            this.tipo.Width = 147;
             // 
             // precio
             // 
             this.precio.HeaderText = "Precio";
             this.precio.Name = "precio";
+            this.precio.Width = 90;
+            // 
+            // peso
+            // 
+            this.peso.HeaderText = "Peso";
+            this.peso.Name = "peso";
+            this.peso.Width = 70;
             // 
             // stock
             // 
             this.stock.HeaderText = "Stock";
             this.stock.Name = "stock";
-            this.stock.Width = 80;
+            this.stock.Width = 70;
+            // 
+            // btnCSV
+            // 
+            this.btnCSV.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCSV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCSV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCSV.Location = new System.Drawing.Point(770, 534);
+            this.btnCSV.Name = "btnCSV";
+            this.btnCSV.Size = new System.Drawing.Size(112, 31);
+            this.btnCSV.TabIndex = 32;
+            this.btnCSV.Text = "Exportar a .csv";
+            this.btnCSV.UseVisualStyleBackColor = false;
+            this.btnCSV.Click += new System.EventHandler(this.btnCSV_Click);
             // 
             // FormProductos
             // 
@@ -307,11 +354,15 @@ namespace Formularios
         private System.Windows.Forms.DataGridView dtgvProductos;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.Button btnCSV;
     }
 }

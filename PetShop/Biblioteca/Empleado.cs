@@ -90,6 +90,30 @@ namespace Biblioteca
 
         }
 
+        public static Empleado ValidarUserPass(string user, string pass)
+        {
+            foreach (Empleado e in Negocio.ListaEmpleados)
+            {
+                if (e.usuario == user && e.contrasenia == pass)
+                {
+                    return e;
+                }
+            }
+
+            return null;
+        }
+
+        public override sealed string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(base.Mostrar());
+            sb.AppendLine($"Legajo: {this.legajo}");
+            sb.AppendLine($"Usuario: {this.Usuario}");
+
+            return sb.ToString();
+        }
+
 
         public static bool operator ==(Empleado e1, Empleado e2)
         {

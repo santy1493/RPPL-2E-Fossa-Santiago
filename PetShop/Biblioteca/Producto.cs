@@ -18,20 +18,22 @@ namespace Biblioteca
         private int codigo;
         private double precio;
         private int stock;
+        private double peso;
         private ETipoProducto tipo;
 
-        public Producto(string nombre, string marca, int codigo, double precio, int stock)
+        public Producto(string nombre, string marca, int codigo, double precio, double peso, int stock)
         {
             this.Nombre = nombre;
             this.Marca = marca;
             this.Codigo = codigo;
             this.Precio = precio;
+            this.Peso = peso;
             this.Stock = stock;
             this.Tipo = ETipoProducto.Otros;
         }
 
-        public Producto(string nombre, string marca, int codigo, double precio, int stock, ETipoProducto tipo)
-            : this(nombre, marca, codigo, precio, stock)
+        public Producto(string nombre, string marca, int codigo, double precio, double peso, int stock, ETipoProducto tipo)
+            : this(nombre, marca, codigo, precio, peso, stock)
         {
             this.Tipo = tipo;
         }
@@ -40,15 +42,16 @@ namespace Biblioteca
         public string Marca { get => marca; set => marca = value; }
         public int Codigo { get => codigo; set => codigo = value; }
         public double Precio { get => precio; set => precio = value; }
+        public double Peso { get => peso; set => peso = value; }
         public int Stock { get => stock; set => stock = value; }
         public ETipoProducto Tipo { get => tipo; set => tipo = value; }
 
 
-        public static bool CargarProducto(string nombre, string marca, string codigo, string precio, string stock, string tipo)
+        public static bool CargarProducto(string nombre, string marca, string codigo, string precio, string peso, string stock, string tipo)
         {
-            if (ValidarStockPrecioCodigo(codigo, precio, stock))
+            if (ValidarStockPrecioPesoCodigo(codigo, precio, peso, stock))
             {
-                Producto nuevoProducto = new Producto(nombre, marca, int.Parse(codigo), double.Parse(precio), int.Parse(stock), ValidarTipo(tipo));
+                Producto nuevoProducto = new Producto(nombre, marca, int.Parse(codigo), double.Parse(precio), double.Parse(peso), int.Parse(stock), ValidarTipo(tipo));
 
                 Negocio.ListaProductos.Add(nuevoProducto);
 
@@ -59,14 +62,15 @@ namespace Biblioteca
 
         }
 
-        public bool ModificarProducto(string nombre, string marca, string codigo, string precio, string stock, string tipo)
+        public bool ModificarProducto(string nombre, string marca, string codigo, string precio, string peso, string stock, string tipo)
         {
-            if (ValidarStockPrecioCodigo(codigo, precio, stock))
+            if (ValidarStockPrecioPesoCodigo(codigo, precio, peso, stock))
             {
                 this.Nombre = nombre;
                 this.Marca = marca;
                 this.Codigo = int.Parse(codigo);
                 this.Precio = double.Parse(precio);
+                this.Peso = double.Parse(peso);
                 this.Stock = int.Parse(stock);
                 this.Tipo = ValidarTipo(tipo);
 
@@ -147,29 +151,13 @@ namespace Biblioteca
             return !(p >= cantidad);
         }
 
-        private static bool ValidarCodigo(string codigo)
+        private static bool ValidarStockPrecioPesoCodigo(string codigo, string precio, string peso, string stock)
         {
-            int codigoInt;
 
-            if (int.TryParse(codigo, out codigoInt))
+            if (Validaciones.ValidarEnteroPositivo(codigo) && Validaciones.ValidarDecimalPositivo(precio) &&
+                Validaciones.ValidarDecimalPositivo(peso) && Validaciones.ValidarEnteroPositivo(stock))
             {
-                if (codigoInt > 0)
-                    return true;
-            }
-
-            return false;
-        }
-
-        private static bool ValidarStockPrecioCodigo(string codigo, string precio, string stock)
-        {
-            int codigoInt;
-            int stockInt;
-            double precioDouble;
-
-            if (int.TryParse(codigo, out codigoInt) && double.TryParse(precio, out precioDouble) && int.TryParse(stock, out stockInt))
-            {
-                if (codigoInt > 0 && precioDouble > 0 && stockInt > 0)
-                    return true;
+                return true;
             }
 
             return false;
@@ -178,8 +166,6 @@ namespace Biblioteca
 
         private static ETipoProducto ValidarTipo(string tipo)
         {
-            int enumLenght = Enum.GetNames(typeof(ETipoProducto)).Length;
-
             foreach(ETipoProducto item in Enum.GetValues(typeof(ETipoProducto)))
             {
                 if (item.ToString() == tipo)

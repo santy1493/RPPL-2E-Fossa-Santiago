@@ -33,10 +33,30 @@ namespace Biblioteca
 
         public static bool ValidarCuil(string cuil)
         {
-            if(long.TryParse(cuil, out long Cuil))
+            if (long.TryParse(cuil, out long Cuil))
             {
                 if (Cuil > 1000000000 && Cuil < 99999999999)
                     return true;
+            }
+
+            return false;
+        }
+
+        public static bool ValidarDecimalPositivo(string decim)
+        {
+            if(ValidarDecimal(decim))
+            {
+                return double.Parse(decim) > 0;
+            }
+
+            return false;
+        }
+
+        public static bool ValidarEnteroPositivo(string entero)
+        {
+            if (ValidarEntero(entero))
+            {
+                return int.Parse(entero) > 0;
             }
 
             return false;

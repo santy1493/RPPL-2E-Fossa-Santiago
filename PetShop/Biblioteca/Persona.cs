@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Biblioteca
 {
@@ -19,10 +20,21 @@ namespace Biblioteca
         public string Apellido { get => apellido; set => apellido = value; }
         public string Cuil { get => cuil; set => cuil = value; }
 
-        //protected static bool ValidarDatosPersona(string nombre, string apellido, string cuil, Direccion direccion)
-        //{
-        //    if()
-        //}
+        public virtual string Mostrar()
+        {
+            return (string)this;
+        }
+
+        public static explicit operator string(Persona p)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre: {p.nombre}");
+            sb.AppendLine($"Apellido: {p.apellido}");
+            sb.AppendLine($"CUIL: {p.cuil}");
+
+            return sb.ToString();
+        }
     }
 }
 
