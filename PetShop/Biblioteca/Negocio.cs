@@ -5,8 +5,9 @@ namespace Biblioteca
     public static class Negocio
     {
         static Empleado empleadoLogeado;
-        public static List<Empleado> listaEmpleados;
+        static List<Empleado> listaEmpleados;
         static Dictionary<string, Cliente> listaClientes;
+        static List<Producto> listaProductos;
 
         static int registroLegajo = 1000;
         static int registroId = 100;
@@ -30,23 +31,23 @@ namespace Biblioteca
             ListaClientes.Add("23276565343", new Cliente("Antonio", "Montana", "23276565343", 321));
             ListaClientes.Add("24348565343", new Cliente("Juliana", "Awada", "24348565343", 65482));
 
-            //listaProductos = new List<Producto>()
-            //    {
-            //        new Producto("dogui", "Purina", 101, 600, 15, ETipoProducto.Alimento),
-            //        new Producto("hueso", "PetToy", 102, 230, 3, ETipoProducto.Juguete),
-            //        new Producto("collar", "PetChain", 103, 300, 2, ETipoProducto.Correa),
-            //        new Producto("shampoo", "PetShamp", 104, 250, 6, ETipoProducto.Limpieza),
-            //        new Producto("pipeta", "Purina", 105, 400, 9, ETipoProducto.Medicamento),
+            ListaProductos = new List<Producto>()
+                {
+                    new Producto("dogui", "Purina", 101, 600, 15, ETipoProducto.Alimento),
+                    new Producto("hueso", "PetToy", 102, 230, 3, ETipoProducto.Juguete),
+                    new Producto("collar", "PetChain", 103, 300, 2, ETipoProducto.Correa),
+                    new Producto("shampoo", "PetShamp", 104, 250, 6, ETipoProducto.Limpieza),
+                    new Producto("pipeta", "Purina", 105, 400, 9, ETipoProducto.Medicamento),
 
-            //    };
+                };
 
         }
 
         public static int RegistroLegajo { get => registroLegajo; set => registroLegajo = value; }
         public static int RegistroId { get => registroId; set => registroId = value; }
         public static Empleado EmpleadoLogeado { get => empleadoLogeado; set => empleadoLogeado = value; }
-        // public static Dictionary<string, Empleado> ListaEmpleados { get => listaEmpleados; set => listaEmpleados = value; }
         public static Dictionary<string, Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
         public static List<Empleado> ListaEmpleados { get => listaEmpleados; set => listaEmpleados = value; }
+        public static List<Producto> ListaProductos { get => listaProductos; set => listaProductos = value; }
     }
 }

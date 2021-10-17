@@ -152,6 +152,7 @@ namespace Formularios
             this.btnProductos.TabIndex = 5;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnMenu
             // 
@@ -214,7 +215,9 @@ namespace Formularios
             this.ClientSize = new System.Drawing.Size(1168, 660);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

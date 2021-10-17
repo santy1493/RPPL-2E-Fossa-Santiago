@@ -31,5 +31,12 @@ namespace Formularios
             formClientes.Show();
             this.Close();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FormProductos formProductos = new FormProductos();
+            formProductos.Show();
+            this.Close();
+        }
     }
 }

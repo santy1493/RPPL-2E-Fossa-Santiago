@@ -28,7 +28,7 @@ namespace Formularios
 
             int n;
 
-            foreach (Empleado empleado in Negocio.listaEmpleados)
+            foreach (Empleado empleado in Negocio.ListaEmpleados)
             {
                 n = dtgvEmpleados.Rows.Add();
 

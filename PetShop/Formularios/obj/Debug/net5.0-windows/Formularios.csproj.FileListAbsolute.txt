@@ -26,3 +26,5 @@ C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.ModificarPersona.resources
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormClientes.resources
 C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormModificarCliente.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormProductos.resources
+C:\Users\santy\Desktop\RPPL-2E-Fossa-Santiago\PetShop\Formularios\obj\Debug\net5.0-windows\Formularios.FormModificarProducto.resources
