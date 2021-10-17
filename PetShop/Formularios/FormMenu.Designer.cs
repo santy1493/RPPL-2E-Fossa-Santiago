@@ -30,6 +30,7 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblAdmin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +68,17 @@ namespace Formularios
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 660);
             this.panel1.TabIndex = 0;
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Red;
+            this.lblAdmin.Location = new System.Drawing.Point(120, 636);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(48, 15);
+            this.lblAdmin.TabIndex = 12;
+            this.lblAdmin.Text = "ADMIN";
             // 
             // lblUsuario
             // 
@@ -127,6 +138,7 @@ namespace Formularios
             this.btnVenta.TabIndex = 7;
             this.btnVenta.Text = "Venta";
             this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // btnClientes
             // 
@@ -209,17 +221,6 @@ namespace Formularios
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(924, 71);
             this.panel2.TabIndex = 1;
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAdmin.ForeColor = System.Drawing.Color.Red;
-            this.lblAdmin.Location = new System.Drawing.Point(120, 636);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(48, 15);
-            this.lblAdmin.TabIndex = 12;
-            this.lblAdmin.Text = "ADMIN";
             // 
             // FormMenu
             // 

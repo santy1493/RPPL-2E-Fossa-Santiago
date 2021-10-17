@@ -17,12 +17,12 @@ namespace Formularios
         public FormMenu()
         {
             InitializeComponent();
-            lblUsuario.Text = Negocio.EmpleadoLogeado.Mostrar();
-            if(Negocio.EmpleadoLogeado.EsAdmin==false)
-            {
-                lblAdmin.Text = string.Empty;
-                btnEmpleados.Enabled = false;
-            }
+            //lblUsuario.Text = Negocio.EmpleadoLogeado.Mostrar();
+            //if(Negocio.EmpleadoLogeado.EsAdmin==false)
+            //{
+            //    lblAdmin.Text = string.Empty;
+            //    btnEmpleados.Enabled = false;
+            //}
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
@@ -43,6 +43,13 @@ namespace Formularios
         {
             FormProductos formProductos = new FormProductos();
             formProductos.Show();
+            this.Close();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            FormVentas formVentas = new FormVentas();
+            formVentas.Show();
             this.Close();
         }
 
@@ -78,5 +85,6 @@ namespace Formularios
                 File.WriteAllLines(sfd.FileName, filas);
             }
         }
+        
     }
 }

@@ -97,5 +97,16 @@ namespace Biblioteca
 
             return false;
         }
+
+        public override string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"ID Cliente: {this.id}");
+            sb.Append(base.Mostrar());
+            sb.Append($"Saldo: ${this.saldo}");
+
+            return sb.ToString();
+        }
     }
 }
