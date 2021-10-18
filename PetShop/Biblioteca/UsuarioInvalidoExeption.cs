@@ -8,6 +8,6 @@ namespace Biblioteca
 {
     public class UsuarioInvalidoExeption : Exception
     {
-
+           
     }
 }

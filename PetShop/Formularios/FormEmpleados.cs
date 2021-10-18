@@ -70,7 +70,7 @@ namespace Formularios
             {
                 if (Empleado.CargarEmpleado(this.txtNombre.Text, this.txtApellido.Text, this.txtCuil.Text, this.txtUser.Text, this.txtPass.Text))
                 {
-                    sonido.Stream = Properties.Resources.tada;
+                    sonido.Stream = Properties.Resources.tada2;
                     sonido.Play();
                     MessageBox.Show("ALTA DE EMPLEADO EXITOSA");
                 }

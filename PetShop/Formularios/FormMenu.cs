@@ -18,12 +18,13 @@ namespace Formularios
         public FormMenu()
         {
             InitializeComponent();
-            //lblUsuario.Text = Negocio.EmpleadoLogeado.Mostrar();
-            //if(Negocio.EmpleadoLogeado.EsAdmin==false)
-            //{
-            //    lblAdmin.Text = string.Empty;
-            //    btnEmpleados.Enabled = false;
-            //}
+            lblUsuario.Text = Negocio.EmpleadoLogeado.Mostrar();
+            if (Negocio.EmpleadoLogeado.EsAdmin == false)
+            {
+                lblAdmin.Text = string.Empty;
+                btnEmpleados.Enabled = false;
+                btnFacturacion.Enabled = false;
+            }
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
@@ -97,6 +98,11 @@ namespace Formularios
             FormFacturacion formFacturacion = new FormFacturacion();
             formFacturacion.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

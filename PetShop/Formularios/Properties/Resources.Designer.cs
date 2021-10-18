@@ -88,5 +88,14 @@ namespace Formularios.Properties {
                 return ResourceManager.GetStream("tada", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream tada2 {
+            get {
+                return ResourceManager.GetStream("tada2", resourceCulture);
+            }
+        }
     }
 }

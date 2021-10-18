@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -137,7 +138,7 @@ namespace Biblioteca
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("****ITEMS****\n");
+            sb.AppendLine("\n****ITEMS****");
 
             foreach(ProductoComprado p in this.listaProductosComprados)
             {
@@ -149,6 +150,14 @@ namespace Biblioteca
             }
 
             return sb.ToString();
+        }
+
+        public void ImprimirFactura()
+        {
+            TextWriter Imprimir = new StreamWriter(@$"C:\Users\santy\Desktop\{this.NumFactura}.txt");
+
+            Imprimir.WriteLine(MostrarFactura());
+            Imprimir.Close();
         }
     }
 }

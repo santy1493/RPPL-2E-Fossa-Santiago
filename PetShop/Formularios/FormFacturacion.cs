@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Biblioteca;
+using System;
 using System.Windows.Forms;
-using Biblioteca;
 
 namespace Formularios
 {
@@ -53,10 +46,18 @@ namespace Formularios
         {
             Factura factura = Factura.BuscarFactura(numFacturaSeleccionado);
 
-            if(!(factura is null))
+            if (!(factura is null))
             {
                 MessageBox.Show(factura.MostrarFactura());
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Factura factura = Factura.BuscarFactura(numFacturaSeleccionado);
+
+            factura.ImprimirFactura();
+
         }
     }
 

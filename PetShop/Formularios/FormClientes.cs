@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +15,18 @@ namespace Formularios
     public partial class FormClientes : FormMenu
     {
         static string cuilSeleccionado;
+        SoundPlayer sonido = new SoundPlayer();
 
         public FormClientes()
         {
             InitializeComponent();
             LlenarGrilla();
+            if (Negocio.EmpleadoLogeado.EsAdmin == false)
+            {
+                btnAlta.Enabled = false;
+                btnBaja.Enabled = false;
+                btnModificar.Enabled = false;
+            }
         }
 
         private void LlenarGrilla()
@@ -47,6 +55,8 @@ namespace Formularios
             {
                 if (Cliente.CargarCliente(this.txtNombre.Text, this.txtApellido.Text, this.txtCuil.Text, this.txtSaldo.Text))
                 {
+                    sonido.Stream = Properties.Resources.tada2;
+                    sonido.Play();
                     MessageBox.Show("ALTA DE CLIENTE EXITOSA");
                 }
                 else

@@ -29,6 +29,7 @@ namespace Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -152,6 +153,7 @@ namespace Formularios
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Window;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.Text = "PetShop";
             this.panel1.ResumeLayout(false);

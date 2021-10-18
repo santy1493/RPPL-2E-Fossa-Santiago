@@ -30,6 +30,7 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnMostrarFactura = new System.Windows.Forms.Button();
             this.dtgvFacturas = new System.Windows.Forms.DataGridView();
             this.numFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +46,7 @@ namespace Formularios
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnImprimir);
             this.panel3.Controls.Add(this.btnMostrarFactura);
             this.panel3.Controls.Add(this.dtgvFacturas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -53,14 +55,32 @@ namespace Formularios
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnImprimir.Location = new System.Drawing.Point(741, 547);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(122, 30);
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir a .txt";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // btnMostrarFactura
             // 
+            this.btnMostrarFactura.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMostrarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarFactura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarFactura.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnMostrarFactura.Location = new System.Drawing.Point(56, 547);
             this.btnMostrarFactura.Name = "btnMostrarFactura";
-            this.btnMostrarFactura.Size = new System.Drawing.Size(138, 23);
+            this.btnMostrarFactura.Size = new System.Drawing.Size(138, 30);
             this.btnMostrarFactura.TabIndex = 1;
-            this.btnMostrarFactura.Text = "button1";
-            this.btnMostrarFactura.UseVisualStyleBackColor = true;
+            this.btnMostrarFactura.Text = "Mostrar Detalle";
+            this.btnMostrarFactura.UseVisualStyleBackColor = false;
             this.btnMostrarFactura.Click += new System.EventHandler(this.btnMostrarFactura_Click);
             // 
             // dtgvFacturas
@@ -95,11 +115,13 @@ namespace Formularios
             // 
             this.cliente.HeaderText = "Cliente";
             this.cliente.Name = "cliente";
+            this.cliente.Width = 150;
             // 
             // cuil
             // 
             this.cuil.HeaderText = "CUIL";
             this.cuil.Name = "cuil";
+            this.cuil.Width = 114;
             // 
             // tipoEnvio
             // 
@@ -136,6 +158,7 @@ namespace Formularios
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvFacturas;
         private System.Windows.Forms.Button btnMostrarFactura;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn numFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;

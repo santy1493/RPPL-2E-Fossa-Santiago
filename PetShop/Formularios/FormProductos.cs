@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace Formularios
     public partial class FormProductos : FormMenu
     {
         static int codigoSeleccionado;
+        SoundPlayer sonido = new SoundPlayer();
 
         public FormProductos()
         {
@@ -68,6 +70,8 @@ namespace Formularios
                 if (Producto.CargarProducto(this.txtNombre.Text, this.txtMarca.Text, this.txtCodigo.Text,
                     this.txtPrecio.Text, this.txtPeso.Text, this.txtStock.Text, this.cmbTipo.Text))
                 {
+                    sonido.Stream = Properties.Resources.tada2;
+                    sonido.Play();
                     MessageBox.Show("ALTA DE PRODUCTO EXITOSA");
                 }
                 else
