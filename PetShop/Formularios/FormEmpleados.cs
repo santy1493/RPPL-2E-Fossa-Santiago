@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using Biblioteca;
 
 namespace Formularios
@@ -15,6 +16,7 @@ namespace Formularios
     public partial class FormEmpleados : FormMenu
     {
         static int legajoSeleccionado;
+        SoundPlayer sonido = new SoundPlayer();
 
         public FormEmpleados()
         {
@@ -68,6 +70,8 @@ namespace Formularios
             {
                 if (Empleado.CargarEmpleado(this.txtNombre.Text, this.txtApellido.Text, this.txtCuil.Text, this.txtUser.Text, this.txtPass.Text))
                 {
+                    sonido.Stream = Properties.Resources.tada;
+                    sonido.Play();
                     MessageBox.Show("ALTA DE EMPLEADO EXITOSA");
                 }
                 else

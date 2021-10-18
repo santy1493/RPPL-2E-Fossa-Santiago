@@ -13,20 +13,27 @@ namespace Formularios
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Empleado empleado = Empleado.ValidarUserPass(this.txtUser.Text, this.txtPass.Text);
+            Empleado empleado;
 
-            if (!(empleado is null))
+            try
             {
+                empleado = Empleado.BuscarEmpleadoPorUser(this.txtUser.Text, this.txtPass.Text);
+
                 Negocio.EmpleadoLogeado = empleado;
                 FormMenu form = new FormMenu();
                 form.Show();
 
+
             }
-            else
+
+            catch (UsuarioInvalidoExeption ex)
             {
-                this.txtUser.Text = "";
-                this.txtPass.Text = "";
+                MessageBox.Show(ex.Message);
             }
+
+            this.txtUser.Text = "";
+            this.txtPass.Text = "";
+
         }
 
         private void btnEmpleado_Click(object sender, EventArgs e)

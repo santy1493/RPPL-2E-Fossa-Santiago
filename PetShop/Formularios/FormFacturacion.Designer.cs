@@ -30,11 +30,15 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnMostrarFactura = new System.Windows.Forms.Button();
             this.dtgvFacturas = new System.Windows.Forms.DataGridView();
             this.numFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnMostrarFactura = new System.Windows.Forms.Button();
+            this.cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFacturas)).BeginInit();
             this.SuspendLayout();
@@ -49,13 +53,27 @@ namespace Formularios
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
             // 
+            // btnMostrarFactura
+            // 
+            this.btnMostrarFactura.Location = new System.Drawing.Point(56, 547);
+            this.btnMostrarFactura.Name = "btnMostrarFactura";
+            this.btnMostrarFactura.Size = new System.Drawing.Size(138, 23);
+            this.btnMostrarFactura.TabIndex = 1;
+            this.btnMostrarFactura.Text = "button1";
+            this.btnMostrarFactura.UseVisualStyleBackColor = true;
+            this.btnMostrarFactura.Click += new System.EventHandler(this.btnMostrarFactura_Click);
+            // 
             // dtgvFacturas
             // 
             this.dtgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numFactura,
             this.fecha,
-            this.cliente});
+            this.cliente,
+            this.cuil,
+            this.tipoEnvio,
+            this.precioEnvio,
+            this.precioTotal});
             this.dtgvFacturas.Location = new System.Drawing.Point(56, 90);
             this.dtgvFacturas.Name = "dtgvFacturas";
             this.dtgvFacturas.RowTemplate.Height = 25;
@@ -78,15 +96,25 @@ namespace Formularios
             this.cliente.HeaderText = "Cliente";
             this.cliente.Name = "cliente";
             // 
-            // btnMostrarFactura
+            // cuil
             // 
-            this.btnMostrarFactura.Location = new System.Drawing.Point(56, 547);
-            this.btnMostrarFactura.Name = "btnMostrarFactura";
-            this.btnMostrarFactura.Size = new System.Drawing.Size(138, 23);
-            this.btnMostrarFactura.TabIndex = 1;
-            this.btnMostrarFactura.Text = "button1";
-            this.btnMostrarFactura.UseVisualStyleBackColor = true;
-            this.btnMostrarFactura.Click += new System.EventHandler(this.btnMostrarFactura_Click);
+            this.cuil.HeaderText = "CUIL";
+            this.cuil.Name = "cuil";
+            // 
+            // tipoEnvio
+            // 
+            this.tipoEnvio.HeaderText = "Tipo de Envio";
+            this.tipoEnvio.Name = "tipoEnvio";
+            // 
+            // precioEnvio
+            // 
+            this.precioEnvio.HeaderText = "Precio Envio";
+            this.precioEnvio.Name = "precioEnvio";
+            // 
+            // precioTotal
+            // 
+            this.precioTotal.HeaderText = "Precio Total";
+            this.precioTotal.Name = "precioTotal";
             // 
             // FormFacturacion
             // 
@@ -107,9 +135,13 @@ namespace Formularios
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvFacturas;
+        private System.Windows.Forms.Button btnMostrarFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn numFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.Button btnMostrarFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoEnvio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioEnvio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioTotal;
     }
 }

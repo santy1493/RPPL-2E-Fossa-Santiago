@@ -33,7 +33,12 @@ namespace Formularios
 
                 dtgvFacturas.Rows[n].Cells[0].Value = factura.NumFactura;
                 dtgvFacturas.Rows[n].Cells[1].Value = factura.Fecha.ToString();
-                dtgvFacturas.Rows[n].Cells[2].Value = factura.Cliente.Apellido;
+                dtgvFacturas.Rows[n].Cells[2].Value = factura.Cliente.Apellido + " " + factura.Cliente.Nombre;
+                dtgvFacturas.Rows[n].Cells[3].Value = factura.Cliente.Cuil;
+                dtgvFacturas.Rows[n].Cells[4].Value = factura.Tipo;
+                dtgvFacturas.Rows[n].Cells[5].Value = factura.PrecioEnvio;
+                dtgvFacturas.Rows[n].Cells[6].Value = factura.CalcularPrecioTotal();
+
 
 
             }

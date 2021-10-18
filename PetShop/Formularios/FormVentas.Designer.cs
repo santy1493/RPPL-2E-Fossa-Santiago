@@ -30,6 +30,9 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblDistanciaEnvio = new System.Windows.Forms.Label();
+            this.chEnvio = new System.Windows.Forms.CheckBox();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.nupCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarCarrito = new System.Windows.Forms.Button();
@@ -55,7 +58,7 @@ namespace Formularios
             this.cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnComprar = new System.Windows.Forms.Button();
+            this.lblPrecioEnvio = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCarrito)).BeginInit();
@@ -65,6 +68,9 @@ namespace Formularios
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPrecioEnvio);
+            this.panel3.Controls.Add(this.lblDistanciaEnvio);
+            this.panel3.Controls.Add(this.chEnvio);
             this.panel3.Controls.Add(this.btnComprar);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.nupCantidad);
@@ -83,6 +89,41 @@ namespace Formularios
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
+            // 
+            // lblDistanciaEnvio
+            // 
+            this.lblDistanciaEnvio.AutoSize = true;
+            this.lblDistanciaEnvio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDistanciaEnvio.ForeColor = System.Drawing.Color.Red;
+            this.lblDistanciaEnvio.Location = new System.Drawing.Point(32, 194);
+            this.lblDistanciaEnvio.Name = "lblDistanciaEnvio";
+            this.lblDistanciaEnvio.Size = new System.Drawing.Size(0, 15);
+            this.lblDistanciaEnvio.TabIndex = 15;
+            // 
+            // chEnvio
+            // 
+            this.chEnvio.AutoSize = true;
+            this.chEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chEnvio.Location = new System.Drawing.Point(337, 154);
+            this.chEnvio.Name = "chEnvio";
+            this.chEnvio.Size = new System.Drawing.Size(52, 19);
+            this.chEnvio.TabIndex = 14;
+            this.chEnvio.Text = "Envio";
+            this.chEnvio.UseVisualStyleBackColor = true;
+            this.chEnvio.CheckedChanged += new System.EventHandler(this.chEnvio_CheckedChanged);
+            // 
+            // btnComprar
+            // 
+            this.btnComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnComprar.Location = new System.Drawing.Point(300, 194);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(132, 23);
+            this.btnComprar.TabIndex = 13;
+            this.btnComprar.Text = "FINALIZAR COMPRA";
+            this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // label7
             // 
@@ -305,18 +346,14 @@ namespace Formularios
             this.saldo.Name = "saldo";
             this.saldo.Width = 90;
             // 
-            // btnComprar
+            // lblPrecioEnvio
             // 
-            this.btnComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComprar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnComprar.Location = new System.Drawing.Point(300, 194);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(132, 23);
-            this.btnComprar.TabIndex = 13;
-            this.btnComprar.Text = "FINALIZAR COMPRA";
-            this.btnComprar.UseVisualStyleBackColor = false;
-            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            this.lblPrecioEnvio.AutoSize = true;
+            this.lblPrecioEnvio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPrecioEnvio.Location = new System.Drawing.Point(300, 130);
+            this.lblPrecioEnvio.Name = "lblPrecioEnvio";
+            this.lblPrecioEnvio.Size = new System.Drawing.Size(0, 15);
+            this.lblPrecioEnvio.TabIndex = 16;
             // 
             // FormVentas
             // 
@@ -366,5 +403,8 @@ namespace Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.CheckBox chEnvio;
+        private System.Windows.Forms.Label lblDistanciaEnvio;
+        private System.Windows.Forms.Label lblPrecioEnvio;
     }
 }

@@ -10,6 +10,7 @@ namespace Formularios
         static int codigoSeleccionado;
         static Cliente clienteSleccionado;
         List<ProductoComprado> listaProductosComprados = new List<ProductoComprado>();
+        static double distanciaEnvio;
 
         public FormVentas()
         {
@@ -78,6 +79,8 @@ namespace Formularios
         {
             clienteSleccionado = Cliente.BuscarCliente(cuilSeleccionado);
             lblDatosCliente.Text = clienteSleccionado.Mostrar();
+            distanciaEnvio = Factura.CalcularDistanciaEnvio();
+            lblDistanciaEnvio.Text = $"Distancia envio: {distanciaEnvio}";
         }
 
         private void dtgvProductos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -127,8 +130,10 @@ namespace Formularios
         private void btnComprar_Click(object sender, System.EventArgs e)
         {
             double precioTotal = 0;
+            double precioEnvio = 0;
             Cliente cliente = clienteSleccionado;
             List<ProductoComprado> facturaProductos = new List<ProductoComprado>();
+
             foreach(ProductoComprado p in listaProductosComprados)
             {
                 facturaProductos.Add(p);
@@ -141,19 +146,43 @@ namespace Formularios
                     precioTotal += p.Producto.Precio * p.Cantidad;
                 }
 
-                if (cliente.Saldo >= precioTotal)
+                if(chEnvio.Checked)
                 {
-                    MessageBox.Show("Venta exitosa precio total: " + precioTotal + "saldo cliente: " + cliente.Saldo);
-                    cliente.ActualizarSaldo(precioTotal);
-                    MessageBox.Show(facturaProductos.Count.ToString());
-                    Negocio.ListaFacturas.Add(new Factura(cliente, facturaProductos));
-                    Producto.ActualizarStock(listaProductosComprados);
-                    
+                    precioEnvio = Factura.CalcularPrecioEnvio(listaProductosComprados, distanciaEnvio);
                 }
-                else
+
+                precioTotal += precioEnvio;
+
+
+                try
                 {
-                    MessageBox.Show("Saldo insuficiente");
+                    if (cliente.Saldo >= precioTotal)
+                    {
+                        MessageBox.Show("Venta exitosa precio total: " + precioTotal + "saldo cliente: " + cliente.Saldo);
+                        cliente.ActualizarSaldo(precioTotal);
+                        MessageBox.Show(facturaProductos.Count.ToString());
+                        Factura factura = new Factura(cliente, facturaProductos);
+                        if (chEnvio.Checked)
+                        {
+                            factura.PrecioEnvio = precioEnvio;
+                            factura.Tipo = Factura.CalcularTipoEnvio(listaProductosComprados);
+                        }
+                            
+                        Negocio.ListaFacturas.Add(factura);
+                        Producto.ActualizarStock(listaProductosComprados);
+
+
+                    }
+                    else
+                    {
+                        throw new ClienteSinDineroExepcion();
+                    }
                 }
+                catch(ClienteSinDineroExepcion ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
 
             else
@@ -166,47 +195,8 @@ namespace Formularios
             clienteSleccionado = null;
             listaProductosComprados.Clear();
             lblDatosCliente.Text = "Seleccione un cliente";
-
-
         }
 
-        //private void btnVenta_Click(object sender, EventArgs e)
-        //{
-        //    double precioTotal = 0;
-
-        //    if (listaProductosComprados.Count > 0 && !(clienteSeleccionado is null))
-        //    {
-        //        foreach (Producto p in productosComprados)
-        //        {
-        //            precioTotal += p.Precio * p.cantVenta;
-        //        }
-
-        //        if (clienteComprando.Saldo >= precioTotal)
-        //        {
-        //            MessageBox.Show("Venta exitosa precio total: " + precioTotal + "saldo cliente: " + clienteComprando.Saldo);
-        //            Cliente.ActualizarSaldo(clienteComprando, precioTotal);
-        //            Negocio.ActualizarStock();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Saldo insuficiente");
-        //        }
-        //    }
-
-        //    else
-        //    {
-        //        MessageBox.Show("No se pudo realizar operacion");
-        //    }
-
-        //    LlenarGrilla();
-        //    BorrarTextBoxProducto();
-        //    lblCliente.Text = string.Empty;
-        //    dtgvCarrito.Rows.Clear();
-        //    clienteComprando = null;
-        //    productosComprados.Clear();
-        //    Negocio.RestablecerCantVentas();
-
-        //}
 
         private bool ValidarNoEstaCarrito(int codigo)
         {
@@ -219,20 +209,15 @@ namespace Formularios
             return true;
         }
 
-        //private void AgregarFilaCarrito(int cantidad)
-        //{
-        //    int n;
+        private void chEnvio_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if(chEnvio.Checked)
+            {
+                double precioEnvio = Factura.CalcularPrecioEnvio(listaProductosComprados, distanciaEnvio);
+                lblPrecioEnvio.Text = $"Precio de envio: ${precioEnvio}";
+            }
 
-        //    n = dtgvCarrito.Rows.Add();
-
-        //    dtgvCarrito.Rows[n].Cells[0].Value = productoSeleccionado.Codigo;
-        //    dtgvCarrito.Rows[n].Cells[1].Value = productoSeleccionado.Nombre;
-        //    dtgvCarrito.Rows[n].Cells[2].Value = productoSeleccionado.Marca;
-        //    dtgvCarrito.Rows[n].Cells[3].Value = cantidad;
-        //    dtgvCarrito.Rows[n].Cells[4].Value = productoSeleccionado.Precio*cantidad;
-
-        //}
-
+        }
 
     }
 }

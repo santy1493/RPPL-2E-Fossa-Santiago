@@ -90,17 +90,41 @@ namespace Biblioteca
 
         }
 
-        public static Empleado ValidarUserPass(string user, string pass)
+        public static Empleado BuscarEmpleadoPorUser(string user, string pass)
         {
+
+            if(ValidarUserPass(user, pass))
+            {
+                foreach (Empleado e in Negocio.ListaEmpleados)
+                {
+                    if (e.usuario == user)
+                    {
+                        return e;
+                    }
+                }
+            }
+            else
+            {
+                throw new UsuarioInvalidoExeption();
+            }
+
+            
+
+            return null;
+        }
+
+        public static bool ValidarUserPass(string user, string pass)
+        {
+
             foreach (Empleado e in Negocio.ListaEmpleados)
             {
                 if (e.usuario == user && e.contrasenia == pass)
                 {
-                    return e;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
         public override sealed string Mostrar()
