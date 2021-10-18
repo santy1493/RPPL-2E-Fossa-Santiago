@@ -108,5 +108,10 @@ namespace Biblioteca
 
             return sb.ToString();
         }
+
+        public void ActualizarSaldo(double monto)
+        {
+            this.saldo -= monto;
+        }
     }
 }

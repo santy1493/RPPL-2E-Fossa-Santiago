@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Biblioteca
 {
@@ -81,6 +80,20 @@ namespace Biblioteca
 
         }
 
+        public string DatosProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre: {this.Nombre}");
+            sb.AppendLine($"Marca: {this.Marca}");
+            sb.AppendLine($"Codigo: {this.Codigo}");
+            sb.AppendLine($"Precio: {this.Precio}");
+            sb.AppendLine($"Stock: {this.Stock}");
+
+
+            return sb.ToString();
+        }
+
         public static string DatosProducto(int codigo)
         {
             StringBuilder sb = new StringBuilder();
@@ -90,7 +103,7 @@ namespace Biblioteca
                 if (p.Codigo == codigo)
                 {
 
-                    sb.AppendLine($"DATOS EMPLEADO:");
+                    sb.AppendLine($"DATOS PRODUCTO:");
                     sb.AppendLine($"Nombre: {p.Nombre}");
                     sb.AppendLine($"Marca: {p.Marca}");
                     sb.AppendLine($"Codigo: {p.Codigo}");
@@ -166,13 +179,27 @@ namespace Biblioteca
 
         private static ETipoProducto ValidarTipo(string tipo)
         {
-            foreach(ETipoProducto item in Enum.GetValues(typeof(ETipoProducto)))
+            foreach (ETipoProducto item in Enum.GetValues(typeof(ETipoProducto)))
             {
                 if (item.ToString() == tipo)
                     return item;
             }
 
             return ETipoProducto.Otros;
+        }
+
+        public static void ActualizarStock(List<ProductoComprado> listaProductosComprados)
+        {
+            foreach (ProductoComprado pc in listaProductosComprados)
+            {
+                foreach (Producto p in Negocio.ListaProductos)
+                {
+                    if (pc.Producto.Codigo == p.Codigo)
+                    {
+                        p.Stock -= pc.Cantidad;
+                    }
+                }
+            }
         }
 
 

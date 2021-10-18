@@ -8,7 +8,10 @@ namespace Biblioteca
         static List<Empleado> listaEmpleados;
         static Dictionary<string, Cliente> listaClientes;
         static List<Producto> listaProductos;
+        static List<Factura> listaFacturas = new List<Factura>();
 
+
+        static int registroFactura = 90000;
         static int registroLegajo = 1000;
         static int registroId = 100;
 
@@ -49,5 +52,7 @@ namespace Biblioteca
         public static Dictionary<string, Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
         public static List<Empleado> ListaEmpleados { get => listaEmpleados; set => listaEmpleados = value; }
         public static List<Producto> ListaProductos { get => listaProductos; set => listaProductos = value; }
+        public static List<Factura> ListaFacturas { get => listaFacturas; set => listaFacturas = value; }
+        public static int RegistroFactura { get => registroFactura; set => registroFactura = value; }
     }
 }

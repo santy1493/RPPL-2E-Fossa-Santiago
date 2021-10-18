@@ -9,7 +9,7 @@ namespace Formularios
         static string cuilSeleccionado;
         static int codigoSeleccionado;
         static Cliente clienteSleccionado;
-        static List<ProductoComprado> listaProductosComprados = new List<ProductoComprado>();
+        List<ProductoComprado> listaProductosComprados = new List<ProductoComprado>();
 
         public FormVentas()
         {
@@ -123,6 +123,90 @@ namespace Formularios
                 nupCantidad.Value = 0;
             }
         }
+
+        private void btnComprar_Click(object sender, System.EventArgs e)
+        {
+            double precioTotal = 0;
+            Cliente cliente = clienteSleccionado;
+            List<ProductoComprado> facturaProductos = new List<ProductoComprado>();
+            foreach(ProductoComprado p in listaProductosComprados)
+            {
+                facturaProductos.Add(p);
+            }
+
+            if (listaProductosComprados.Count > 0 && !(cliente is null))
+            {
+                foreach (ProductoComprado p in listaProductosComprados)
+                {
+                    precioTotal += p.Producto.Precio * p.Cantidad;
+                }
+
+                if (cliente.Saldo >= precioTotal)
+                {
+                    MessageBox.Show("Venta exitosa precio total: " + precioTotal + "saldo cliente: " + cliente.Saldo);
+                    cliente.ActualizarSaldo(precioTotal);
+                    MessageBox.Show(facturaProductos.Count.ToString());
+                    Negocio.ListaFacturas.Add(new Factura(cliente, facturaProductos));
+                    Producto.ActualizarStock(listaProductosComprados);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Saldo insuficiente");
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("No se pudo realizar operacion");
+            }
+
+            LlenarGrilla();
+            dtgvCarrito.Rows.Clear();
+            clienteSleccionado = null;
+            listaProductosComprados.Clear();
+            lblDatosCliente.Text = "Seleccione un cliente";
+
+
+        }
+
+        //private void btnVenta_Click(object sender, EventArgs e)
+        //{
+        //    double precioTotal = 0;
+
+        //    if (listaProductosComprados.Count > 0 && !(clienteSeleccionado is null))
+        //    {
+        //        foreach (Producto p in productosComprados)
+        //        {
+        //            precioTotal += p.Precio * p.cantVenta;
+        //        }
+
+        //        if (clienteComprando.Saldo >= precioTotal)
+        //        {
+        //            MessageBox.Show("Venta exitosa precio total: " + precioTotal + "saldo cliente: " + clienteComprando.Saldo);
+        //            Cliente.ActualizarSaldo(clienteComprando, precioTotal);
+        //            Negocio.ActualizarStock();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Saldo insuficiente");
+        //        }
+        //    }
+
+        //    else
+        //    {
+        //        MessageBox.Show("No se pudo realizar operacion");
+        //    }
+
+        //    LlenarGrilla();
+        //    BorrarTextBoxProducto();
+        //    lblCliente.Text = string.Empty;
+        //    dtgvCarrito.Rows.Clear();
+        //    clienteComprando = null;
+        //    productosComprados.Clear();
+        //    Negocio.RestablecerCantVentas();
+
+        //}
 
         private bool ValidarNoEstaCarrito(int codigo)
         {

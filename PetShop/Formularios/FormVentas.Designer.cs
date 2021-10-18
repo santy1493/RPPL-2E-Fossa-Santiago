@@ -30,6 +30,18 @@ namespace Formularios
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nupCantidad = new System.Windows.Forms.NumericUpDown();
+            this.btnAgregarCarrito = new System.Windows.Forms.Button();
+            this.dtgvCarrito = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lblDatosCliente = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,27 +55,17 @@ namespace Formularios
             this.cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtgvCarrito = new System.Windows.Forms.DataGridView();
-            this.btnAgregarCarrito = new System.Windows.Forms.Button();
-            this.nupCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarrito)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnComprar);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.nupCantidad);
             this.panel3.Controls.Add(this.btnAgregarCarrito);
@@ -81,6 +83,115 @@ namespace Formularios
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(924, 589);
             this.panel3.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(446, 553);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 15);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Cantidad";
+            // 
+            // nupCantidad
+            // 
+            this.nupCantidad.Location = new System.Drawing.Point(507, 549);
+            this.nupCantidad.Name = "nupCantidad";
+            this.nupCantidad.Size = new System.Drawing.Size(48, 23);
+            this.nupCantidad.TabIndex = 11;
+            this.nupCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnAgregarCarrito
+            // 
+            this.btnAgregarCarrito.BackColor = System.Drawing.Color.Yellow;
+            this.btnAgregarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCarrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarCarrito.Location = new System.Drawing.Point(594, 549);
+            this.btnAgregarCarrito.Name = "btnAgregarCarrito";
+            this.btnAgregarCarrito.Size = new System.Drawing.Size(149, 23);
+            this.btnAgregarCarrito.TabIndex = 10;
+            this.btnAgregarCarrito.Text = "AGREGAR AL CARRITO";
+            this.btnAgregarCarrito.UseVisualStyleBackColor = false;
+            this.btnAgregarCarrito.Click += new System.EventHandler(this.btnAgregarCarrito_Click);
+            // 
+            // dtgvCarrito
+            // 
+            this.dtgvCarrito.AllowUserToAddRows = false;
+            this.dtgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dtgvCarrito.Location = new System.Drawing.Point(438, 34);
+            this.dtgvCarrito.Name = "dtgvCarrito";
+            this.dtgvCarrito.RowTemplate.Height = 25;
+            this.dtgvCarrito.Size = new System.Drawing.Size(463, 183);
+            this.dtgvCarrito.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Monto Total";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 50;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(438, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Carrito";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(438, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Productos";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(32, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Clientes";
             // 
             // button1
             // 
@@ -194,114 +305,18 @@ namespace Formularios
             this.saldo.Name = "saldo";
             this.saldo.Width = 90;
             // 
-            // label4
+            // btnComprar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(32, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Clientes";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(438, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Productos";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(438, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Carrito";
-            // 
-            // dtgvCarrito
-            // 
-            this.dtgvCarrito.AllowUserToAddRows = false;
-            this.dtgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dtgvCarrito.Location = new System.Drawing.Point(438, 34);
-            this.dtgvCarrito.Name = "dtgvCarrito";
-            this.dtgvCarrito.RowTemplate.Height = 25;
-            this.dtgvCarrito.Size = new System.Drawing.Size(463, 183);
-            this.dtgvCarrito.TabIndex = 9;
-            // 
-            // btnAgregarCarrito
-            // 
-            this.btnAgregarCarrito.BackColor = System.Drawing.Color.Yellow;
-            this.btnAgregarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCarrito.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarCarrito.Location = new System.Drawing.Point(594, 549);
-            this.btnAgregarCarrito.Name = "btnAgregarCarrito";
-            this.btnAgregarCarrito.Size = new System.Drawing.Size(149, 23);
-            this.btnAgregarCarrito.TabIndex = 10;
-            this.btnAgregarCarrito.Text = "AGREGAR AL CARRITO";
-            this.btnAgregarCarrito.UseVisualStyleBackColor = false;
-            this.btnAgregarCarrito.Click += new System.EventHandler(this.btnAgregarCarrito_Click);
-            // 
-            // nupCantidad
-            // 
-            this.nupCantidad.Location = new System.Drawing.Point(507, 549);
-            this.nupCantidad.Name = "nupCantidad";
-            this.nupCantidad.Size = new System.Drawing.Size(48, 23);
-            this.nupCantidad.TabIndex = 11;
-            this.nupCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(446, 553);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Cantidad";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Monto Total";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 50;
+            this.btnComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnComprar.Location = new System.Drawing.Point(300, 194);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(132, 23);
+            this.btnComprar.TabIndex = 13;
+            this.btnComprar.Text = "FINALIZAR COMPRA";
+            this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // FormVentas
             // 
@@ -314,10 +329,10 @@ namespace Formularios
             this.Controls.SetChildIndex(this.panel3, 0);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCarrito)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,5 +365,6 @@ namespace Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button btnComprar;
     }
 }

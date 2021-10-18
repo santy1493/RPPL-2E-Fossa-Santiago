@@ -125,6 +125,7 @@ namespace Formularios
             this.btnFacturacion.TabIndex = 8;
             this.btnFacturacion.Text = "Facturacion";
             this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
             // btnVenta
             // 
@@ -233,6 +234,7 @@ namespace Formularios
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

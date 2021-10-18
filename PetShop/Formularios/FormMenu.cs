@@ -85,6 +85,17 @@ namespace Formularios
                 File.WriteAllLines(sfd.FileName, filas);
             }
         }
-        
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            FormFacturacion formFacturacion = new FormFacturacion();
+            formFacturacion.Show();
+            this.Close();
+        }
     }
 }
